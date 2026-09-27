@@ -1,68 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
 <title>来場者向けの謎解きアプリ｜ねぎラボ</title>
-<link rel="stylesheet" href="../../style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="前回はLINEで一本道、答えによる分岐が作れなかった謎解きを、運営が問題と分岐を線でつないで作れる画面に。参加者はQRを読むだけ、登録なし。結末は3つ。">
+<meta name="author" content="neggy">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://negilab.tokyo/case/nazotoki/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ねぎラボ">
+<meta property="og:title" content="来場者向けの謎解きアプリ｜ねぎラボ">
+<meta property="og:description" content="前回はLINEで一本道、答えによる分岐が作れなかった謎解きを、運営が問題と分岐を線でつないで作れる画面に。参加者はQRを読むだけ、登録なし。結末は3つ。">
+<meta property="og:url" content="https://negilab.tokyo/case/nazotoki/">
+<meta property="og:image" content="https://negilab.tokyo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@800&display=swap">
+<link rel="stylesheet" href="../../site.css">
 </head>
 <body>
-<header class="site-header">
+<div class="head" id="head">
   <div class="wrap">
-    <a class="logo" href="../../index.html"><img src="https://negilab.tokyo/logo.png" alt="ねぎラボ"></a>
-    <nav class="nav">
+    <a class="logo" href="../../index.html" aria-label="ねぎラボ"><img src="https://negilab.tokyo/logo.png" alt="ねぎラボ" width="480" height="183"></a>
+    <nav aria-label="サイト内">
       <a href="../../index.html#cases">作って納めたもの</a>
       <a href="../../index.html#how">進め方</a>
       <a href="../../index.html#price">料金</a>
       <a href="../../index.html#faq">よくある質問</a>
-      <a class="btn btn-primary" href="../../index.html#contact">作業の相談をする</a>
     </nav>
+    <span class="sp"></span>
+    <a class="btn sm" href="../../index.html#contact" data-cta="sub_topbar_form">作業の相談をする</a>
   </div>
-</header>
+</div>
 <main>
-<div class="wrap detail">
-  <p class="crumb"><a href="../../index.html">ねぎラボ</a> ／ 作って納めたもの：来場者向けの謎解き</p>
-  <section>
-    <div class="case-head">
-      <div class="case"><div class="who">イベント運営会社</div>
-      <h1>「問題を考える人も絵を描く人もいるのに、アプリを作る人だけいない」</h1></div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="crumb"><a href="../../index.html">ねぎラボ</a> ／ 作って納めたもの：来場者向けの謎解き</div>
+      <span class="ind">イベント運営会社</span>
+      <h1>「問題を考える人も絵を描く人もいるのに、アプリを作る人だけいない」</h1>
     </div>
-    <dl>
-      <dt>困りごと</dt>
-      <dd>前回はLINEで一本道の謎解きを作られましたが、答えによる分岐が作れませんでした。問題を考える方、絵を描く方、運営の方はいらっしゃいます。アプリを作る人だけがいませんでした。</dd>
-      <dt>作ったもの</dt>
-      <dd>参加者は、QRを読んでログインなしで遊べる画面。運営の方は、パソコンで問題と分岐を線でつないで作る画面。結末は3つです。数百人が同時に始めても詰まらない作りです。本番前に試せる試験環境もあります。運営の方が作る画面は、すでにお使いいただいています。</dd>
-      <dt>どこで動くか</dt>
-      <dd>お客さま向けに取得した独自ドメインと、Google Apps Scriptです。</dd>
-      <dt>アプリの中のAI</dt>
-      <dd>使っていません。</dd>
-      <dt>体験版</dt>
-      <dd>架空の題材で遊んでいただけます。携帯でご覧ください。<br><a class="btn btn-primary" href="https://negilab.github.io/tools/demo/nazotoki/" style="margin-top:10px">体験版を開く→</a></dd>
-    </dl>
-    <div class="cta">
-      <p>「作る人だけいない」のでしたら、やりたいことを、そのままお聞かせください。前回の仕組みがLINEでも紙でも構いません。</p>
-      <p><a class="btn btn-primary" href="../../index.html#contact">作業の相談をする→</a></p>
-      <p>メール：<a href="mailto:info@negilab.tokyo?subject=%E4%BD%9C%E6%A5%AD%E3%81%AE%E7%9B%B8%E8%AB%87">info@negilab.tokyo</a></p>
+  </header>
+
+  <section class="band">
+    <div class="wrap">
+      <h2 class="sec">困りごと</h2>
+      <p>前回はLINEで一本道の謎解きを作られましたが、答えによる分岐が作れませんでした。問題を考える方、絵を描く方、運営の方はいらっしゃいます。アプリを作る人だけがいませんでした。</p>
     </div>
   </section>
-</div>
+  <section class="">
+    <div class="wrap">
+      <h2 class="sec">作ったもの</h2>
+      <p>参加者は、QRを読んでログインなしで遊べる画面。運営の方は、パソコンで問題と分岐を線でつないで作る画面。結末は3つです。数百人が同時に始めても詰まらない作りです。本番前に試せる試験環境もあります。運営の方が作る画面は、すでにお使いいただいています。</p>
+    </div>
+  </section>
+  <section class="band">
+    <div class="wrap">
+      <h2 class="sec">どこで動くか</h2>
+      <p>お客さま向けに取得した独自ドメインと、Google Apps Scriptです。</p>
+    </div>
+  </section>
+  <section class="">
+    <div class="wrap">
+      <h2 class="sec">アプリの中のAI</h2>
+      <p>使っていません。</p>
+    </div>
+  </section>
+  <section class="band" id="demo">
+    <div class="wrap">
+      <h2 class="sec">体験版</h2>
+      <p>架空の題材で遊んでいただけます。携帯でご覧ください。</p>
+      <div class="cta2"><a class="btn" href="https://negilab.github.io/tools/demo/nazotoki/" target="_blank" rel="noopener" data-cta="sub_try_nazotoki">体験版を開く<span class="arw">→</span></a></div>
+    </div>
+  </section>
+
+  <section class="" id="contact">
+    <div class="wrap">
+      <p class="lead">「作る人だけいない」のでしたら、やりたいことを、そのままお聞かせください。前回の仕組みがLINEでも紙でも構いません。</p>
+      <div class="cta2"><a class="btn" href="../../index.html#contact" data-cta="sub_contact_form">作業の相談をする<span class="arw">→</span></a></div>
+      <p class="mail">メール：<a href="mailto:info@negilab.tokyo?subject=%E4%BD%9C%E6%A5%AD%E3%81%AE%E7%9B%B8%E8%AB%87" data-cta="sub_contact_mail">info@negilab.tokyo</a></p>
+    </div>
+  </section>
+
 </main>
-<footer class="site-footer">
+<footer>
   <div class="wrap">
     <div class="cols">
       <div>
-        <img src="https://negilab.tokyo/logo.png" alt="ねぎラボ" style="height:28px">
-        <p>ねぎラボ（neggy）／東京都杉並区／<a href="mailto:info@negilab.tokyo">info@negilab.tokyo</a><br>個人事業。適格請求書発行事業者（インボイス）未登録。</p>
+        <div class="logo"><img src="https://negilab.tokyo/logo.png" alt="ねぎラボ" width="480" height="183"></div>
+        <p>ねぎラボ（neggy）／東京都杉並区／info@negilab.tokyo<br>個人事業。適格請求書発行事業者（インボイス）未登録。</p>
       </div>
       <div>
         <h4>体験版一覧</h4>
         <ul>
-          <li><a href="https://negilab.github.io/tools/pdfmask/">図面から名前と印を消す道具（パソコン向け）</a></li>
-          <li><a href="https://negilab.github.io/tools/demo/shutten/">出店の受付（パソコン向け）</a></li>
-          <li><a href="https://negilab.github.io/tools/demo/baito/">アルバイトの出勤と支払い（携帯でも）</a></li>
-          <li><a href="https://negilab.github.io/tools/demo/nazotoki/">謎解き（携帯向け）</a></li>
-          <li><a href="https://negilab.github.io/tools/douga/">簡単な動画編集の道具（音声・文字起こし・画面録画をひとつに。ねぎラボが自分で使っているもの）</a></li>
+          <li><a href="https://negilab.github.io/tools/pdfmask/" target="_blank" rel="noopener">図面から名前と印を消す道具（パソコン向け）</a></li>
+          <li><a href="https://negilab.github.io/tools/demo/shutten/" target="_blank" rel="noopener">出店の受付（パソコン向け）</a></li>
+          <li><a href="https://negilab.github.io/tools/demo/baito/" target="_blank" rel="noopener">アルバイトの出勤と支払い（携帯でも）</a></li>
+          <li><a href="https://negilab.github.io/tools/demo/nazotoki/" target="_blank" rel="noopener">謎解き（携帯向け）</a></li>
+          <li><a href="https://negilab.github.io/tools/douga/" target="_blank" rel="noopener">簡単な動画編集の道具（音声・文字起こし・画面録画をひとつに。ねぎラボが自分で使っているもの）</a></li>
         </ul>
       </div>
       <div>
@@ -75,8 +116,31 @@
         </ul>
       </div>
     </div>
-    <p class="small">このフォームの内容は、ご返信のためだけに使います。サイトはGoogleアナリティクスで閲覧数を計測しています。© 2026 ねぎラボ</p>
+    <div class="copy"><span>このフォームの内容は、ご返信のためだけに使います。サイトはGoogleアナリティクスで閲覧数を計測しています。</span><span>© 2026 ねぎラボ</span></div>
   </div>
 </footer>
+<div class="bar" id="bar">
+  <a class="btn" href="../../index.html#contact" data-cta="sub_bar_form">作業の相談をする</a>
+</div>
+<script>
+(function () {
+
+  var head = document.getElementById('head');
+  var bar = document.getElementById('bar');
+  var hero = document.querySelector('.hero');
+  var contact = document.getElementById('contact');
+  function update() {
+    var y = window.scrollY || 0;
+    if (head) head.classList.toggle('is-scrolled', y > 8);
+    if (!hero || !contact || !bar) return;
+    var heroSeen = hero.getBoundingClientRect().bottom > 0;
+    var contactSeen = contact.getBoundingClientRect().top < window.innerHeight;
+    bar.classList.toggle('is-on', !heroSeen && !contactSeen);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>

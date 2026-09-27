@@ -2,252 +2,756 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ねぎラボ｜散らばった事務を、ひとつの画面に。最初の1課題は、無料でお試しいただけます</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="それぞれの会社の事務作業を減らす、業務改善のお仕事です。散らばったエクセルやメール、紙の事務を、いまお使いのGoogleやパソコンの中で動く仕組みとしてご提案・構築します。最初の1課題は無料でお試しいただけます。東京都杉並区・ねぎラボ。">
+<meta name="author" content="neggy">
 <meta name="robots" content="noindex,nofollow">
-<title>ねぎラボ｜小さな会社の事務を減らす業務改善</title>
-<link rel="stylesheet" href="style.css">
+
+<link rel="canonical" href="https://negilab.tokyo/">
+<meta property="og:url" content="https://negilab.tokyo/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ねぎラボ">
+<meta property="og:title" content="散らばった事務を、ひとつの画面に。最初の1課題は、無料でお試しいただけます。">
+<meta property="og:description" content="散らばった事務を、ひとつの画面に。最初の1課題は、無料でお試しいただけます。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://negilab.tokyo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FBF8F1">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@800&display=swap">
+
+<style>
+  /* ═══ 色と書体（B案：生成り・葉の緑・オレンジのボタン） ═══ */
+  :root {
+    color-scheme: light;
+    --bg:        #FBF8F1;
+    --bg-2:      #F4EFE4;
+    --card:      #FFFFFF;
+    --rule:      #EAE3D6;
+    --rule-2:    #D9CFBE;
+    --ink:       #2A2620;
+    --ink-2:     #5C554B;
+    --ink-3:     #85796A;
+    --green:     #3F6E3A;
+    --green-deep:#2F5A2C;
+    --green-soft:#EAF1E4;
+    --orange:    #D9622B;
+    --orange-deep:#BF5222;
+    --orange-soft:#FBEBE2;
+    --marker:    #FFE8A3;
+    --white:     #FFFFFF;
+
+    --maru:  "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", "Noto Sans JP", sans-serif;
+    --sans:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    --num:   "M PLUS Rounded 1c", "Zen Maru Gothic", sans-serif;
+
+    --w: 1040px;
+    --w-text: 720px;
+    --gutter: 20px;
+    --sp: clamp(64px, 10vw, 112px);
+    --r: 18px;
+    --shadow: 0 1px 2px rgba(60,40,10,.04), 0 10px 30px rgba(60,40,10,.06);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.9;
+    -webkit-font-smoothing: antialiased; overflow-wrap: break-word; overflow-x: clip;
+  }
+  ::selection { background: var(--marker); }
+  p { margin: 0; text-wrap: pretty; }
+  p + p { margin-top: 1em; }
+  h1, h2, h3, h4 { margin: 0; font-family: var(--maru); font-weight: 700; font-feature-settings: "palt"; text-wrap: balance; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  a { color: var(--green); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; text-decoration-color: var(--rule-2); }
+  a:hover { text-decoration-color: currentColor; }
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 6px;
+  }
+  .wrap { width: 100%; max-width: var(--w); margin-inline: auto; padding-inline: var(--gutter); }
+  .narrow { max-width: var(--w-text); }
+  section { padding-block: var(--sp); }
+  .band { background: var(--bg-2); }
+  .band-white { background: var(--card); }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--maru); font-size: 14px; font-weight: 700; color: var(--green);
+    background: var(--green-soft); border-radius: 999px; padding: 4px 14px; margin-bottom: 18px;
+  }
+  h2.sec { font-size: clamp(26px, 5.4vw, 36px); line-height: 1.4; margin-bottom: 16px; }
+  .lede { color: var(--ink-2); font-size: 17px; max-width: 38em; margin-bottom: 36px; }
+  .mark { background: linear-gradient(transparent 58%, var(--marker) 58%, var(--marker) 92%, transparent 92%); padding-inline: .05em; }
+
+  /* ═══ ボタン ═══ */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 58px; padding: 12px 28px; border-radius: 999px; border: 0; cursor: pointer;
+    background: var(--orange); color: var(--white);
+    font-family: var(--maru); font-size: 17px; font-weight: 700; letter-spacing: .02em; line-height: 1.3;
+    text-decoration: none; text-align: center;
+    box-shadow: 0 4px 14px rgba(217,98,43,.28);
+  }
+  .btn:hover { background: var(--orange-deep); text-decoration: none; transform: translateY(-1px); }
+  .btn .arw { font-size: 15px; opacity: .9; }
+  .btn.ghost { background: var(--card); color: var(--green); box-shadow: inset 0 0 0 2px var(--green); }
+  .btn.ghost:hover { background: var(--green-soft); }
+  .btn.sm { min-height: 44px; padding: 8px 18px; font-size: 15px; box-shadow: none; }
+
+  /* ═══ ヘッダー ═══ */
+  .head {
+    position: sticky; top: 0; z-index: 30;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent; transition: border-color .2s;
+  }
+  .head.is-scrolled { border-bottom-color: var(--rule); }
+  .head .wrap { display: flex; align-items: center; gap: 18px; min-height: 64px; }
+  .head .logo img { height: 34px; width: auto; }
+  .head nav { display: flex; gap: 22px; margin-left: 14px; }
+  .head nav a { font-family: var(--maru); font-weight: 700; font-size: 15px; color: var(--ink-2); text-decoration: none; }
+  .head nav a:hover { color: var(--green); }
+  .head .sp { flex: 1 1 auto; }
+
+  /* ═══ 冒頭 ═══ */
+  .hero { padding-block: clamp(28px, 6vw, 64px) clamp(48px, 8vw, 80px); overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .9fr); gap: 32px 48px; align-items: end; }
+  .hero h1 { font-size: clamp(28px, 7.4vw, 46px); line-height: 1.32; font-weight: 900; margin: 14px 0 20px; }
+  .hero .sub .asterisk { display: block; font-size: 13px; color: var(--ink-3); margin-top: 6px; }
+  .hero .sub { font-size: clamp(16px, 2.6vw, 18.5px); color: var(--ink-2); max-width: 30em; }
+  .hero .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--maru); font-size: 14.5px; font-weight: 700; color: var(--green-deep);
+    background: var(--card); border: 1.5px solid var(--rule-2); border-radius: 999px; padding: 7px 15px 7px 11px;
+  }
+  .badge::before {
+    content: ""; width: 18px; height: 18px; border-radius: 50%; background: var(--green);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 14.2-4-4 1.6-1.6 2.4 2.4 5.4-5.4 1.6 1.6z'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 14.2-4-4 1.6-1.6 2.4 2.4 5.4-5.4 1.6 1.6z'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+
+  /* 一行フォーム */
+  .quick { margin-top: 30px; max-width: 34em; }
+  .quick .row { display: flex; gap: 10px; }
+  .quick input {
+    flex: 1 1 auto; min-width: 0; min-height: 58px; padding: 12px 18px;
+    font-family: inherit; font-size: 16px; color: var(--ink);
+    background: var(--card); border: 1.5px solid var(--rule-2); border-radius: 999px;
+  }
+  .quick input:focus { border-color: var(--green); }
+  .quick .btn { flex: 0 0 auto; }
+  .quick .note { margin-top: 12px; font-size: 14px; color: var(--ink-2); line-height: 1.7; }
+  .quick .note b { color: var(--ink); }
+
+  .hero .pic { position: relative; align-self: end; }
+  .hero .pic img { width: min(100%, 420px); margin-inline: auto; }
+  .hero .pic .tag {
+    position: absolute; left: 4px; bottom: 46%;
+    font-family: var(--maru); font-weight: 700; font-size: 14px; line-height: 1.5; color: var(--ink);
+    background: var(--card); border-radius: 14px 14px 14px 4px; padding: 10px 14px; box-shadow: var(--shadow);
+  }
+  .hero .pic .tag small { display: block; font-weight: 500; color: var(--ink-2); font-size: 12.5px; }
+
+  /* ═══ 実績の帯 ═══ */
+  .proof { padding-block: 34px; border-block: 1px solid var(--rule); background: var(--card); }
+  .proof .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 32px; }
+  .proof .n { font-family: var(--num); font-weight: 800; font-size: clamp(24px, 3.6vw, 32px); line-height: 1.15; color: var(--green-deep); font-variant-numeric: tabular-nums; }
+  .proof .n .from { color: var(--ink-3); font-weight: 800; text-decoration: line-through; text-decoration-thickness: 2px; font-size: .78em; margin-right: 6px; }
+  .proof .n .arw { color: var(--orange); font-size: .7em; margin-right: 6px; }
+  .proof .l { font-size: 14px; color: var(--ink-2); margin-top: 4px; }
+  .proof .co { grid-column: 1 / -1; font-size: 13.5px; color: var(--ink-3); border-top: 1px dashed var(--rule); padding-top: 14px; margin-top: 4px; }
+  .proof .co b { color: var(--ink-2); font-weight: 500; }
+
+  /* ═══ こんな作業 ═══ */
+  .pains { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .pain {
+    display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start;
+    background: var(--card); border: 1px solid var(--rule); border-radius: var(--r); padding: 20px 20px;
+    font-size: 15.5px; line-height: 1.7;
+  }
+  .pain .ic { width: 44px; height: 44px; border-radius: 12px; background: var(--green-soft); display: grid; place-items: center; color: var(--green); }
+  .pain .ic svg { width: 24px; height: 24px; }
+  .pain b { display: block; font-family: var(--maru); font-size: 17px; margin-bottom: 2px; }
+  .pain span { color: var(--ink-2); font-size: 14.5px; }
+  .pains-close { margin-top: 26px; font-size: 16px; color: var(--ink-2); max-width: 40em; }
+  .pains-close b { color: var(--ink); }
+
+  /* ═══ 考え方 ═══ */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .pillar { background: var(--card); border-radius: var(--r); padding: 26px 24px 24px; box-shadow: var(--shadow); }
+  .pillar .no { font-family: var(--num); font-weight: 800; font-size: 14px; color: var(--orange); letter-spacing: .1em; }
+  .pillar h3 { font-size: 19px; line-height: 1.5; margin: 6px 0 10px; }
+  .pillar p { font-size: 14.5px; color: var(--ink-2); line-height: 1.8; }
+  .ai-note {
+    margin-top: 22px; display: flex; gap: 12px; align-items: start;
+    background: var(--green-soft); border-radius: 14px; padding: 16px 18px; font-size: 14.5px; color: var(--ink-2); line-height: 1.8;
+  }
+  .ai-note b { color: var(--green-deep); }
+  .ai-note .ic { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-family: var(--maru); font-weight: 900; font-size: 15px; margin-top: 2px; }
+
+  /* ═══ 事例 ═══ */
+  .case { background: var(--card); border-radius: 24px; box-shadow: var(--shadow); padding: clamp(22px, 4vw, 36px); margin-top: 26px; }
+  .case:first-of-type { margin-top: 0; }
+  .case .ind { display: inline-flex; gap: 8px; align-items: center; font-family: var(--maru); font-size: 13.5px; font-weight: 700; color: var(--green-deep); background: var(--green-soft); border-radius: 999px; padding: 3px 12px; margin-bottom: 14px; }
+  .case h3 { font-size: clamp(21px, 4.2vw, 27px); line-height: 1.45; margin-bottom: 12px; }
+  .case .quote { font-size: 15.5px; color: var(--ink-2); border-left: 3px solid var(--rule-2); padding-left: 14px; margin-bottom: 22px; }
+  .case .grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 26px 32px; align-items: start; }
+  .shot { margin: 0; }
+  .shot .frame { border-radius: 12px; overflow: hidden; border: 1px solid var(--rule); box-shadow: 0 8px 24px rgba(60,40,10,.08); background: #fff; }
+  .shot .frame img { width: 100%; }
+  .shot figcaption { font-size: 12.5px; color: var(--ink-3); margin-top: 8px; line-height: 1.6; }
+  .ba { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 14px; }
+  .ba .from { font-family: var(--num); font-weight: 800; font-size: 22px; color: var(--ink-3); text-decoration: line-through; text-decoration-thickness: 2.5px; text-decoration-color: color-mix(in srgb, var(--orange) 70%, transparent); }
+  .ba .arw { color: var(--orange); font-weight: 700; font-size: 18px; }
+  .ba .to { font-family: var(--num); font-weight: 800; font-size: clamp(30px, 5vw, 40px); line-height: 1; color: var(--green-deep); }
+  .ba .cap { flex: 1 0 100%; font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+  .case .lead { font-size: 15.5px; line-height: 1.85; }
+  .points { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .points li { background: var(--bg); border-radius: 12px; padding: 12px 14px; font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+  .points li b { display: block; font-family: var(--maru); font-size: 16px; color: var(--ink); margin-bottom: 2px; }
+  .io { margin-top: 18px; display: grid; grid-template-columns: 9.5em 1fr; gap: 6px 12px; font-size: 13.5px; color: var(--ink-2); line-height: 1.7; }
+  .io dt { font-weight: 700; color: var(--green-deep); }
+  .io dd { margin: 0; }
+  .near { margin-top: 20px; padding-top: 16px; border-top: 1px dashed var(--rule); font-size: 14.5px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; justify-content: space-between; }
+  .near b { color: var(--ink); }
+  .near a { font-family: var(--maru); font-weight: 700; white-space: nowrap; }
+  .others { margin-top: 34px; background: var(--card); border-radius: var(--r); padding: 24px 26px; border: 1px dashed var(--rule-2); }
+  .others h3 { font-size: 18px; margin-bottom: 12px; }
+  .others ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .others li { font-size: 14.5px; color: var(--ink-2); line-height: 1.75; padding-left: 1.2em; text-indent: -1.2em; }
+  .others li::before { content: "・"; color: var(--green); }
+  .others li b { color: var(--ink); }
+
+  /* ═══ 途中の呼びかけ ═══ */
+  .midcta { background: var(--green-deep); color: #fff; padding-block: clamp(44px, 7vw, 64px); }
+  .midcta .wrap { display: grid; grid-template-columns: 1fr auto; gap: 18px 32px; align-items: center; }
+  .midcta h2 { font-size: clamp(22px, 4.2vw, 30px); line-height: 1.45; color: #fff; }
+  .midcta p { color: rgba(255,255,255,.85); font-size: 15px; margin-top: 8px; max-width: 34em; }
+  .midcta .btn { box-shadow: 0 6px 18px rgba(0,0,0,.2); }
+
+  /* ═══ 進め方 ═══ */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: s; position: relative; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 52px 1fr; gap: 0 18px; padding: 0 0 26px; position: relative; }
+  .steps li::before {
+    content: counter(s); width: 44px; height: 44px; border-radius: 50%;
+    background: var(--card); border: 2px solid var(--green); color: var(--green-deep);
+    font-family: var(--num); font-weight: 800; font-size: 18px; display: grid; place-items: center; z-index: 1;
+  }
+  .steps li::after { content: ""; position: absolute; left: 21px; top: 44px; bottom: -2px; width: 2px; background: var(--rule-2); }
+  .steps li:last-child::after { display: none; }
+  .steps li:last-child { padding-bottom: 0; }
+  .steps b, .steps span { grid-column: 2; }
+  .steps b { display: block; font-family: var(--maru); font-size: 18px; line-height: 1.5; padding-top: 6px; }
+  .steps .tag { display: inline-block; font-size: 12.5px; font-weight: 700; color: var(--orange-deep); background: var(--orange-soft); border-radius: 999px; padding: 2px 10px; margin-left: 8px; vertical-align: 2px; }
+  .steps span { display: block; font-size: 15px; color: var(--ink-2); line-height: 1.8; margin-top: 4px; }
+
+  /* ═══ 料金 ═══ */
+  .price { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 24px; align-items: start; }
+  .pcard { background: var(--card); border-radius: 24px; padding: 30px 28px; box-shadow: var(--shadow); border-top: 6px solid var(--orange); position: sticky; top: 84px; }
+  .pcard .lbl { font-family: var(--maru); font-size: 15px; font-weight: 700; color: var(--ink-2); }
+  .pcard .yen { font-family: var(--num); font-weight: 800; font-size: clamp(48px, 9vw, 64px); line-height: 1; color: var(--ink); letter-spacing: -.02em; margin: 6px 0 2px; }
+  .pcard .yen small { font-size: .42em; font-weight: 800; color: var(--ink-2); margin-left: 4px; }
+  .pcard .tax { font-size: 13.5px; color: var(--ink-3); }
+  .pcard ul { list-style: none; margin: 18px 0 0; padding: 18px 0 0; border-top: 1px solid var(--rule); display: grid; gap: 10px; }
+  .pcard li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; font-size: 15px; line-height: 1.6; }
+  .pcard li::before { content: "✓"; color: var(--green); font-weight: 900; }
+  .pcard .btn { width: 100%; margin-top: 22px; }
+  .terms { display: grid; gap: 0; background: var(--card); border-radius: var(--r); border: 1px solid var(--rule); overflow: hidden; }
+  .terms div { display: grid; grid-template-columns: 9em 1fr; gap: 14px; padding: 16px 20px; border-top: 1px solid var(--rule); font-size: 14.5px; line-height: 1.8; }
+  .terms div:first-child { border-top: 0; }
+  .terms dt { font-family: var(--maru); font-weight: 700; color: var(--green-deep); font-size: 14px; padding-top: .15em; }
+  .terms dd { margin: 0; color: var(--ink-2); }
+  .terms dd b { color: var(--ink); }
+  .first { margin-top: 18px; background: var(--marker); border-radius: 14px; padding: 16px 20px; font-size: 14.5px; line-height: 1.8; color: var(--ink); }
+  .first b { font-family: var(--maru); }
+  .vs { margin-top: 22px; }
+  .vs h3 { font-size: 17px; margin-bottom: 10px; }
+  .vs table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--rule); font-size: 14px; }
+  .vs th, .vs td { padding: 11px 14px; text-align: left; border-top: 1px solid var(--rule); vertical-align: top; line-height: 1.6; }
+  .vs thead th { border-top: 0; background: var(--bg-2); font-family: var(--maru); font-size: 13.5px; }
+  .vs thead th:last-child { background: var(--green-soft); color: var(--green-deep); }
+  .vs tbody th { font-weight: 700; color: var(--ink-2); font-size: 13.5px; width: 7.5em; }
+  .vs td.no { color: var(--ink-3); }
+  .vs td.yes { color: var(--ink); font-weight: 700; background: color-mix(in srgb, var(--green-soft) 45%, transparent); }
+
+  /* ═══ つくる人 ═══ */
+  .me { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 30px 44px; align-items: start; }
+  .me .ph img { width: 100%; border-radius: 28px; box-shadow: var(--shadow); }
+  .me .nm { font-family: var(--maru); font-size: 26px; font-weight: 900; line-height: 1.3; }
+  .me .nm small { display: block; font-size: 14px; font-weight: 700; color: var(--ink-2); }
+  .me .bio { margin-top: 12px; font-size: 15.5px; color: var(--ink-2); }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+  .stat { background: var(--card); border-radius: 14px; padding: 16px 16px 14px; border: 1px solid var(--rule); }
+  .stat .v { font-family: var(--num); font-weight: 800; font-size: 30px; line-height: 1; color: var(--green-deep); }
+  .stat .v small { font-size: 15px; margin-left: 1px; }
+  .stat .d { font-size: 13px; color: var(--ink-2); line-height: 1.6; margin-top: 8px; }
+  .me .aw { margin-top: 14px; font-size: 13px; color: var(--ink-3); line-height: 1.8; }
+  .promise { margin-top: 22px; display: grid; gap: 10px; }
+  .promise div { background: var(--card); border-radius: 14px; padding: 14px 18px; font-size: 14.5px; color: var(--ink-2); line-height: 1.75; border-left: 4px solid var(--green); }
+  .promise b { color: var(--ink); font-family: var(--maru); display: block; }
+  .biz { margin-top: 22px; font-size: 13.5px; color: var(--ink-3); line-height: 1.8; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+
+  /* ═══ FAQ ═══ */
+  .faq { display: grid; gap: 10px; }
+  .faq details { background: var(--card); border-radius: 14px; border: 1px solid var(--rule); }
+  .faq summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: 1fr 24px; gap: 14px; align-items: center; padding: 16px 20px; font-family: var(--maru); font-weight: 700; font-size: 16px; line-height: 1.6; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "＋"; color: var(--green); font-weight: 900; font-size: 20px; line-height: 1; text-align: center; }
+  .faq details[open] summary::after { content: "－"; }
+  .faq summary:hover { color: var(--green-deep); }
+  .faq .a { padding: 0 20px 18px; font-size: 15px; color: var(--ink-2); line-height: 1.85; max-width: 36em; }
+
+  /* ═══ 相談 ═══ */
+  .reassure { list-style: none; margin: 0 0 30px; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .reassure li { background: var(--card); border-radius: 14px; padding: 14px 16px; font-size: 14.5px; line-height: 1.7; color: var(--ink-2); border: 1px solid var(--rule); }
+  .reassure b { display: block; font-family: var(--maru); color: var(--ink); font-size: 15.5px; }
+  form.main { background: var(--card); border-radius: 24px; padding: clamp(22px, 4vw, 34px); box-shadow: var(--shadow); }
+  .field { margin-bottom: 20px; }
+  .field > label, .field > .lg { display: block; font-family: var(--maru); font-size: 14.5px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .req { color: var(--orange-deep); font-size: 12px; font-weight: 700; margin-left: 8px; background: var(--orange-soft); border-radius: 999px; padding: 1px 8px; }
+  .opt { color: var(--ink-3); font-size: 12px; font-weight: 500; margin-left: 8px; }
+  .hint { font-size: 13.5px; color: var(--ink-3); line-height: 1.65; margin-top: 6px; }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%; font-family: inherit; font-size: 16px; line-height: 1.7; color: var(--ink);
+    background: var(--bg); border: 1.5px solid var(--rule-2); border-radius: 12px; padding: 12px 16px; min-height: 52px;
+  }
+  textarea { min-height: 130px; resize: vertical; }
+  input:focus, textarea:focus { border-color: var(--green); background: var(--card); }
+  [aria-invalid="true"] { border-color: var(--orange) !important; background: var(--orange-soft) !important; }
+  .err { display: none; margin-top: 6px; font-size: 13.5px; font-weight: 700; color: var(--orange-deep); }
+  .err.is-on { display: block; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+  fieldset { border: 0; margin: 0; padding: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; color: var(--ink-2); background: var(--bg); border: 1.5px solid var(--rule-2); border-radius: 999px; padding: 8px 14px; min-height: 42px; user-select: none; }
+  .chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .chip .bx { width: 16px; height: 16px; border: 1.5px solid var(--rule-2); border-radius: 5px; background: var(--card); }
+  .chip:hover { border-color: var(--ink-3); }
+  .chip:has(input:checked) { border-color: var(--green); background: var(--green-soft); color: var(--ink); font-weight: 700; }
+  .chip:has(input:checked) .bx { border-color: var(--green); background: var(--green); position: relative; }
+  .chip:has(input:checked) .bx::after { content: ""; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(42deg); }
+  .chip:has(input:focus-visible) { outline: 3px solid var(--orange); outline-offset: 2px; }
+  .before-send { margin: 6px 0 14px; font-size: 14px; color: var(--ink-2); background: var(--bg); border-radius: 12px; padding: 12px 16px; line-height: 1.7; }
+  .before-send b { color: var(--ink); }
+  .send { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .send .copy { grid-column: 1 / -1; justify-self: center; background: none; border: 0; font: inherit; font-size: 14px; color: var(--ink-3); text-decoration: underline; cursor: pointer; padding: 6px; }
+  .sent { display: none; margin-top: 18px; padding: 16px 18px; background: var(--green-soft); border-radius: 12px; font-size: 14.5px; line-height: 1.8; }
+  .sent.is-on { display: block; }
+  .direct { margin-top: 26px; font-size: 15px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 24px; }
+  .direct a { font-weight: 700; }
+
+  /* ═══ 足元 ═══ */
+  footer { padding-block: 40px 60px; border-top: 1px solid var(--rule); font-size: 13.5px; color: var(--ink-3); }
+  footer .cols { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 24px 32px; }
+  footer h4 { font-family: var(--maru); font-size: 13.5px; color: var(--ink-2); margin-bottom: 10px; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  footer a { color: var(--ink-3); text-decoration: none; }
+  footer a:hover { color: var(--green); text-decoration: underline; }
+  footer .logo img { height: 26px; width: auto; margin-bottom: 10px; opacity: .8; }
+  footer .copy { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; }
+
+  /* ═══ 携帯の追従ボタン ═══ */
+  .bar { display: none; }
+
+  /* ═══ 幅の切り替え ═══ */
+  @media (max-width: 860px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .hero .pic { order: -1; }
+    .hero .pic img { width: min(62vw, 300px); margin-inline: 0; }
+    .hero .pic .tag { left: min(52vw, 250px); bottom: 46%; }
+    .pillars { grid-template-columns: 1fr; }
+    .case .grid { grid-template-columns: 1fr; }
+    .price { grid-template-columns: 1fr; }
+    .pcard { position: static; }
+    .me { grid-template-columns: 1fr; }
+    .me .ph img { width: 180px; }
+    .midcta .wrap { grid-template-columns: 1fr; }
+    footer .cols { grid-template-columns: 1fr; }
+    .head nav { display: none; }
+  }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: clamp(27px, 7.4vw, 34px); }
+    .quick .row { flex-direction: column; }
+    .quick .btn { width: 100%; }
+    .proof .wrap { grid-template-columns: 1fr; gap: 14px; }
+    .proof .n { font-size: 26px; }
+    .stats { grid-template-columns: 1fr; }
+    .reassure { grid-template-columns: 1fr; }
+    .two { grid-template-columns: 1fr; }
+    .send { grid-template-columns: 1fr; }
+    .terms div { grid-template-columns: 1fr; gap: 2px; }
+    .points { grid-template-columns: 1fr; }
+    .io { grid-template-columns: 1fr; gap: 2px 0; }
+    .io dd { margin-bottom: 8px; }
+    .head .btn.sm { padding-inline: 14px; font-size: 14px; }
+    .bar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+      display: flex; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); border-top: 1px solid var(--rule);
+      transform: translateY(115%); visibility: hidden;
+    }
+    .bar.is-on { transform: none; visibility: visible; }
+    .bar .btn { flex: 1 1 auto; min-height: 52px; }
+    body:has(.bar.is-on) footer { padding-bottom: 130px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+    .btn { transition: background-color .15s, transform .15s; }
+    .bar { transition: transform .25s ease, visibility .25s; }
+  }
+  @media print {
+    .head, .bar, form, .quick, .midcta { display: none !important; }
+    body { background: #fff; }
+    .case, .pillar, .pcard, .stat { box-shadow: none; border: 1px solid #ccc; }
+  }
+
+  /* ═══ v4 追加 ═══ */
+  .hero h1 .sub2 { display: block; font-size: .62em; font-weight: 900; color: var(--ink-2); margin-top: .35em; }
+  .cta2 { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .free-note { margin-top: 12px; font-size: 14px; color: var(--ink-2); }
+  .doors { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+  .doors a { font-family: var(--maru); font-weight: 700; font-size: 14px; color: var(--green-deep); background: var(--card); border: 1.5px solid var(--rule-2); border-radius: 999px; padding: 7px 14px; text-decoration: none; }
+  .doors a:hover { border-color: var(--green); background: var(--green-soft); }
+  .shot a.frame { display: block; position: relative; text-decoration: none; }
+  .shot a.frame .play { position: absolute; right: 12px; bottom: 12px; font-family: var(--maru); font-weight: 700; font-size: 13px; color: #fff; background: var(--orange); border-radius: 999px; padding: 6px 14px; box-shadow: 0 4px 12px rgba(217,98,43,.35); }
+  .shot a.frame:hover .play { background: var(--orange-deep); }
+  .try { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 18px; }
+  .try .btn { min-height: 52px; flex-direction: column; gap: 0; line-height: 1.2; padding: 8px 26px; }
+  .try .btn small { font-size: 11.5px; font-weight: 500; opacity: .9; }
+  .try .more { font-family: var(--maru); font-weight: 700; }
+  .others li a { font-family: var(--maru); font-weight: 700; margin-left: 6px; white-space: nowrap; }
+  .vs thead th small { display: block; font-weight: 500; font-size: 11.5px; color: var(--ink-3); }
+  .vs tbody th { width: 9em; }
+  .me .links { margin-top: 14px; font-size: 14px; color: var(--ink-2); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .before-send .dim { color: var(--ink-3); font-size: 13px; }
+  .send { display: block; }
+  .send .btn { width: 100%; }
+  .send .alt { margin-top: 12px; font-size: 13.5px; color: var(--ink-3); text-align: center; line-height: 2; }
+  .send .alt .copy { display: inline; padding: 0; font-size: 13.5px; color: var(--green); }
+  @media (max-width: 600px) {
+    .cta2 .btn { flex: 1 1 100%; }
+    .vs table { font-size: 12.5px; }
+    .vs th, .vs td { padding: 8px 8px; }
+    .vs tbody th { width: 6.5em; }
+  }
+
+  /* ═══ v5 追加 ═══ */
+  .hero h1 { font-size: clamp(26px, 6.6vw, 40px); line-height: 1.45; word-break: keep-all; overflow-wrap: normal; line-break: strict; }
+  .cta2 .btn { flex-direction: column; gap: 0; line-height: 1.25; padding: 10px 26px; }
+  .cta2 .btn small { font-size: 11.5px; font-weight: 500; opacity: .9; }
+  .worries { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .worries li { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 14px 16px 14px 46px; position: relative; font-size: 15.5px; line-height: 1.7; }
+  .worries li::before { content: ""; position: absolute; left: 16px; top: 17px; width: 16px; height: 16px; border: 1.5px solid var(--rule-2); border-radius: 5px; background: var(--bg); }
+  .close { margin-top: 20px; color: var(--ink-2); font-size: 16px; }
+  .pts { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+  .pts li { background: var(--bg); border-radius: 12px; padding: 10px 14px 10px 36px; position: relative; font-size: 14.5px; line-height: 1.6; }
+  .pts li::before { content: ""; position: absolute; left: 14px; top: 15px; width: 12px; height: 7px; border-left: 2.5px solid var(--green); border-bottom: 2.5px solid var(--green); transform: rotate(-45deg); }
+    .case h3 { font-size: clamp(19px, 4vw, 24px); margin-bottom: 18px; }
+  .shot a.frame.phone { aspect-ratio: 1200 / 760; background: var(--green-soft); border-radius: 12px; display: grid; place-items: center; text-align: center; padding: 20px; }
+  .shot a.frame.phone .play { position: static; }
+  .shot a.frame.phone .ph-note { display: block; margin-top: 12px; font-size: 13.5px; color: var(--green-deep); }
+  #price .pcard { position: static; max-width: none; margin-top: 8px; }
+  #price .pcard .tax { font-size: 15px; color: var(--ink); margin-top: 6px; }
+  #price .pcard ul { font-size: 15px; }
+  .sub3 { font-size: 17px; margin: 26px 0 10px; }
+  .plain { margin: 0; padding-left: 1.3em; color: var(--ink-2); font-size: 15px; display: grid; gap: 6px; }
+  .note { margin-top: 16px; font-size: 14px; color: var(--ink-3); }
+  #profile .me { grid-template-columns: 180px 1fr; }
+  #profile .me .nm small { font-size: 13.5px; }
+  .before-send { display: none; }
+  @media (max-width: 860px) { #profile .me { grid-template-columns: 1fr; } #profile .me .ph img { width: 160px; } }
+</style>
 </head>
 <body>
-<header class="site-header">
+
+<!-- ══ ヘッダー ══ -->
+<div class="head" id="head">
   <div class="wrap">
-    <a class="logo" href="index.html"><img src="https://negilab.tokyo/logo.png" alt="ねぎラボ"></a>
-    <nav class="nav">
-      <a href="index.html#cases">作って納めたもの</a>
-      <a href="index.html#how">進め方</a>
-      <a href="index.html#price">料金</a>
-      <a href="index.html#faq">よくある質問</a>
-      <a class="btn btn-primary" href="index.html#contact">作業の相談をする</a>
+    <a class="logo" href="index.html" aria-label="ねぎラボ"><img src="https://negilab.tokyo/logo.png" alt="ねぎラボ" width="480" height="183"></a>
+    <nav aria-label="ページ内">
+      <a href="#cases">作って納めたもの</a>
+      <a href="#how">進め方</a>
+      <a href="#price">料金</a>
+      <a href="#faq">よくある質問</a>
     </nav>
+    <span class="sp"></span>
+    <a class="btn sm" href="#contact" data-cta="head_form">作業の相談をする</a>
   </div>
-</header>
+</div>
 
 <main>
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <h1>エクセル、フォーム、メール、紙。散らばった事務を、ひとつの画面にまとめます。</h1>
-      <p class="lead">それぞれの会社の、それぞれの形の事務作業を減らす、そんな業務改善のお仕事をしています。いまのやり方をそのまま見せていただき、負担を減らせるところを見つけ、あなたの会社の環境の中でできるやり方をご提案・構築します。最初の1課題は、無料でお試しいただけます。</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="demo/index.html">体験版を触る<small>登録なし・携帯でも</small></a>
-        <a class="btn btn-secondary" href="#contact">作業の相談をする</a>
+
+  <!-- ══ 最初の画面 ══ -->
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <h1>エクセル、<wbr>フォーム、<wbr>メール、<wbr>紙。<br>散らばった事務を、<wbr><span class="mark">ひとつの画面</span>に<wbr>まとめます。</h1>
+        <p class="sub">それぞれの会社の、それぞれの形の事務作業を減らす、そんな業務改善のお仕事をしています。いまのやり方をそのまま見せていただき、負担を減らせるところを見つけ、あなたの会社の環境の中でできるやり方をご提案・構築します。最初の1課題は、無料でお試しいただけます。</p>
+        <div class="cta2">
+          <a class="btn" href="demo/index.html" data-cta="hero_try">体験版を触る<small>登録なし・携帯でも</small></a>
+          <a class="btn ghost" href="#contact" data-cta="hero_form">作業の相談をする</a>
+        </div>
+        <p class="free-note">ご相談も試作も無料です。</p>
       </div>
-      <p class="note">ご相談も試作も無料です。</p>
+      <div class="pic">
+        <img src="https://negilab.tokyo/me-hero.png" alt="ねぎラボの neggy" width="450" height="518" fetchpriority="high">
+        <div class="tag">neggy<small>ねぎラボ・業務改善の人</small></div>
+      </div>
     </div>
-    <div><img src="https://negilab.tokyo/me-hero.png" alt="ねぎラボの neggy"></div>
-  </div>
-</section>
+  </header>
 
-<section id="examples">
-  <div class="wrap">
-    <h2>たとえば、こんな作業</h2>
-    <ul class="examples">
-      <li>申し込みがフォームとメールで別々に届き、集計のたびに書き写している</li>
-      <li>アルバイトの出勤と支払いを、エクセルで一人ずつ計算し、交代のたびに直している</li>
-      <li>外に出す図面や書類から、名前や電話番号を1ページずつ探して消している</li>
-      <li>やりたい企画も担当者もそろっているのに、それを動かす仕組みを作る人だけいない</li>
-    </ul>
-    <p>どれも「やり方は決まっているのに、手が足りない」作業です。あなたの会社の環境の中でできる方法で、業務改善をご提案します。</p>
-  </div>
-</section>
-
-<section id="how">
-  <div class="wrap">
-    <h2>進め方</h2>
-    <ol class="steps">
-      <li>
-        <h3><span class="num">1</span>見せていただく</h3>
-        <p>ビデオ通話で、いまお使いのエクセルやフォーム、書類を、そのままお見せください。</p>
-      </li>
-      <li>
-        <h3><span class="num">2</span>お試しいただく<span class="tag">無料</span></h3>
-        <p>業務を1つ選び、減らし方を形にしてお渡しします。エクセルの手直しで済むことも、小さなアプリになることもあります。</p>
-        <p class="note">これまでは、打ち合わせの翌日か翌々日、遅くとも5営業日でお渡ししています。</p>
-      </li>
-      <li>
-        <h3><span class="num">3</span>減らし方を決める</h3>
-        <p>試作のあとは、1社につき月5万円です。</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section id="cases">
-  <div class="wrap">
-    <h2>作って納めたもの</h2>
-
-    <article class="case">
-      <div class="who">建設会社</div>
-      <h3>「図面から名前と印を消すのに、1件2時間かかる」</h3>
-      <img src="https://negilab.tokyo/shot-2.svg" alt="図面から消す候補が並び、チェックで全ページから消える画面">
-      <p>外に渡す前の図面から、工事名・所在地・担当者名・電話番号・印を消す作業です。1物件で100ページ超、消す箇所は数千。市販の墨消しソフトでは、探すのに1時間、印を塗るのに30分かかっていました。図面を読み込むと消す候補が一覧に並び、チェックすると、全ページから消えたファイルが出てきます。</p>
-      <div class="links">
-        <a class="btn btn-primary" href="https://negilab.github.io/tools/pdfmask/">体験版を開く<small>パソコン向け・架空の図面</small></a>
-        <a href="case/zumen/index.html">くわしく →</a>
-      </div>
-    </article>
-
-    <article class="case">
-      <div class="who">イベント運営会社</div>
-      <h3>「出店の受付が、フォームとメールとパワポとエクセルに散らばっている」</h3>
-      <img src="https://negilab.tokyo/shot-1.svg" alt="出店申し込みの管理画面">
-      <p>Googleフォームに写真欄を付けると、Googleアカウントをお持ちでない方が開けず、写真だけ別のメールで受け取っていました。消防に出す配置図はパワポに手で貼り、保健所の一覧表はエクセルに転記。既存のフォームと書類2枚をお預かりし、申し込みから配置図・一覧表まで、ひとつの管理画面にまとめました。</p>
-      <div class="links">
-        <a class="btn btn-primary" href="https://negilab.github.io/tools/demo/shutten/">体験版を開く<small>パソコン向け・架空データ</small></a>
-        <a href="case/shutten/index.html">くわしく →</a>
-      </div>
-    </article>
-
-    <article class="case">
-      <div class="who">同じイベント運営会社</div>
-      <h3>「アルバイトの出勤と支払いを、一人ずつ時間×時給＋交通費で計算している」</h3>
-      <img src="https://negilab.tokyo/shot-3.svg" alt="アルバイトの支払い画面">
-      <p>出勤も支払いもエクセルに手入力。月で締めたら一人ずつ計算し、明細を紙に印刷して封筒に入れ、手渡ししていました。既製のソフトにやり方を合わせていただくのではなく、この会社の管理のやり方（案件ごとに日を作り、出た人を入れ、月で締めて紙を渡す）を、そのままアプリにしました。</p>
-      <div class="links">
-        <a class="btn btn-primary" href="https://negilab.github.io/tools/demo/baito/">体験版を開く<small>携帯でも・架空データ</small></a>
-        <a href="case/arbeit/index.html">くわしく →</a>
-      </div>
-    </article>
-
-    <article class="case">
-      <div class="who">同じイベント運営会社</div>
-      <h3>「問題を考える人も絵を描く人もいるのに、アプリを作る人だけいない」</h3>
-      <p>前回はLINEで一本道の謎解きを作られましたが、答えによる分岐ができませんでした。参加者はQRを読むだけで、登録なしで遊べる画面。運営の方は、問題と「答えごとの次の問題」を画面の上でつないで組み立てます。次回からも、運営の方だけで作っていただけます。</p>
-      <div class="links">
-        <a class="btn btn-primary" href="https://negilab.github.io/tools/demo/nazotoki/">体験版を開く<small>参加者はQRを読むだけ。携帯で遊べます</small></a>
-        <a href="case/nazotoki/index.html">くわしく →</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section id="price">
-  <div class="wrap">
-    <h2>料金</h2>
-    <div class="price-box">
-      <p class="price">5万円／月</p>
-      <p>税込50,000円。1社につき。</p>
-      <ul>
-        <li>初期費用なし。最低契約期間なし。</li>
-        <li>減らす業務の数に上限はありません。</li>
-        <li>取りかかるのは1つずつ、順番に進めます。</li>
-        <li>手直しや追加は何度でも承ります。</li>
-        <li>エクセルやGoogle、そのパソコンの中で動くものは、これ以外にかかりません。</li>
+  <!-- ══ たとえば、こんな作業 ══ -->
+  <section class="band" id="tema">
+    <div class="wrap narrow">
+      <h2 class="sec">たとえば、こんな作業</h2>
+      <ul class="worries">
+        <li>申し込みがフォームとメールで別々に届き、集計のたびに書き写している</li>
+        <li>アルバイトの出勤と支払いを、エクセルで一人ずつ計算し、交代のたびに直している</li>
+        <li>外に出す図面や書類から、名前や電話番号を1ページずつ探して消している</li>
+        <li>やりたい企画も担当者もそろっているのに、それを動かす仕組みを作る人だけいない</li>
       </ul>
+      <p class="close">どれも「やり方は決まっているのに、手が足りない」作業です。あなたの会社の環境の中でできる方法で、業務改善をご提案します。</p>
     </div>
-    <div class="extra">
-      <h3>別にかかるもの（必要なときは、作る前にお伝えします）</h3>
-      <ul>
+  </section>
+
+  <!-- ══ 進め方 ══ -->
+  <section id="how">
+    <div class="wrap narrow">
+      <h2 class="sec">進め方</h2>
+      <ol class="steps">
+        <li><b>見せていただく</b><span>ビデオ通話で、いまお使いのエクセルやフォーム、書類を、そのままお見せください。整えていただかなくて大丈夫です。</span></li>
+        <li><b>お試しいただく<span class="tag">無料</span></b><span>業務を1つ選び、減らし方を形にしてお渡しします。エクセルの手直しで済むことも、小さなアプリになることもあります。これまでは、打ち合わせの翌日か翌々日、遅くとも5営業日でお渡ししています。</span></li>
+        <li><b>減らし方を決める</b><span>試作のあとは、1社につき月5万円です。次に減らしたい業務を1つずつ順番に拝見し、エクセルの手直し、仕事の流れの変更、AIやアプリの追加など、その業務に合う方法をご提案し、ご支援していきます。</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══ 作って納めたもの ══ -->
+  <section class="band" id="cases">
+    <div class="wrap">
+      <h2 class="sec">作って納めたもの</h2>
+      <p class="lede">どれも、実際の会社のお困りごとから作ってお納めしたものです。体験版はすべて架空のデータで動いています。</p>
+
+      <article class="case" id="case-zumen">
+        <div class="ind">建設会社</div>
+        <h3>「図面から名前と印を消すのに、1件2時間かかる」</h3>
+        <div class="grid">
+          <figure class="shot"><a class="frame" href="https://negilab.github.io/tools/pdfmask/" target="_blank" rel="noopener" data-cta="try_pdfmask"><img src="https://negilab.tokyo/shot-2.svg" alt="図面から消す候補が並び、チェックで全ページから消える画面" width="1200" height="760" loading="lazy"><span class="play">体験版を開く</span></a></figure>
+          <div>
+            <p class="lead">外に渡す前の図面から、工事名・所在地・担当者名・電話番号・印を消す作業です。1物件で100ページ超、消す箇所は数千。市販の墨消しソフトでは、探すのに1時間、印を塗るのに30分かかっていました。図面を読み込むと消す候補が一覧に並び、チェックすると、全ページから消えたファイルが出てきます。</p>
+            <ul class="pts">
+              <li>1件2時間が、数分に</li>
+              <li>図面はパソコンの外に出ない。通信なし、ネット不要</li>
+              <li>黒塗りではなく、文字そのものを消す</li>
+            </ul>
+                        <div class="try">
+              <a class="btn" href="https://negilab.github.io/tools/pdfmask/" target="_blank" rel="noopener" data-cta="try_pdfmask">体験版を開く<small>パソコン向け・架空の図面</small></a>
+              <a class="more" href="case/zumen/index.html">くわしく →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="case-shutten">
+        <div class="ind">イベント運営会社</div>
+        <h3>「出店の受付が、フォームとメールとパワポとエクセルに散らばっている」</h3>
+        <div class="grid">
+          <figure class="shot"><a class="frame" href="https://negilab.github.io/tools/demo/shutten/" target="_blank" rel="noopener" data-cta="try_shutten"><img src="https://negilab.tokyo/shot-1.svg" alt="出店申し込みの管理画面" width="1200" height="760" loading="lazy"><span class="play">体験版を開く</span></a></figure>
+          <div>
+            <p class="lead">Googleフォームに写真欄を付けると、Googleアカウントをお持ちでない方が開けず、写真だけ別のメールで受け取っていました。消防に出す配置図はパワポに手で貼り、保健所の一覧表はエクセルに転記。既存のフォームと書類2枚をお預かりし、申し込みから配置図・一覧表まで、ひとつの管理画面にまとめました。</p>
+            <ul class="pts">
+              <li>写真を別メールで受け取る作業が無くなった</li>
+              <li>消防の配置図と保健所の一覧表が、ボタンで出る</li>
+              <li>質問12問はそのまま。ご相談いただいた当日から本番の受付で使用。作るのに1日</li>
+            </ul>
+                        <div class="try">
+              <a class="btn" href="https://negilab.github.io/tools/demo/shutten/" target="_blank" rel="noopener" data-cta="try_shutten">体験版を開く<small>パソコン向け・架空データ</small></a>
+              <a class="more" href="case/shutten/index.html">くわしく →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="case-arbeit">
+        <div class="ind">同じイベント運営会社</div>
+        <h3>「アルバイトの出勤と支払いを、一人ずつ時間×時給＋交通費で計算している」</h3>
+        <div class="grid">
+          <figure class="shot"><a class="frame" href="https://negilab.github.io/tools/demo/baito/" target="_blank" rel="noopener" data-cta="try_baito"><img src="https://negilab.tokyo/shot-3.svg" alt="アルバイトの支払い画面" width="1200" height="760" loading="lazy"><span class="play">体験版を開く</span></a></figure>
+          <div>
+            <p class="lead">出勤も支払いもエクセルに手入力。月で締めたら一人ずつ計算し、明細を紙に印刷して封筒に入れ、手渡ししていました。既製のソフトにやり方を合わせていただくのではなく、この会社の管理のやり方（案件ごとに日を作り、出た人を入れ、月で締めて紙を渡す）を、そのままアプリにしました。</p>
+            <ul class="pts">
+              <li>案件ごとに日を作って、出た人を入れるだけ。前の日と同じ顔ぶれなら、ボタン1つで写せる</li>
+              <li>月で締めると、封筒に入れて渡す人ごとの明細が、ボタン1つで出る</li>
+              <li>既存のエクセルから、案件11件・出勤の記録151行・52人分をそのまま移した</li>
+            </ul>
+                        <div class="try">
+              <a class="btn" href="https://negilab.github.io/tools/demo/baito/" target="_blank" rel="noopener" data-cta="try_baito">体験版を開く<small>携帯でも・架空データ</small></a>
+              <a class="more" href="case/arbeit/index.html">くわしく →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="case-nazotoki">
+        <div class="ind">同じイベント運営会社</div>
+        <h3>「問題を考える人も絵を描く人もいるのに、アプリを作る人だけいない」</h3>
+        <div class="grid">
+          <figure class="shot"><a class="frame phone" href="https://negilab.github.io/tools/demo/nazotoki/" target="_blank" rel="noopener" data-cta="try_nazotoki"><span class="play">体験版を開く</span><span class="ph-note">参加者はQRを読むだけ。携帯で遊べます</span></a></figure>
+          <div>
+            <p class="lead">前回はLINEで一本道の謎解きを作られましたが、答えによる分岐ができませんでした。参加者はQRを読むだけで、登録なしで遊べる画面。運営の方は、問題と「答えごとの次の問題」を画面の上でつないで組み立てます。次回からも、運営の方だけで作っていただけます。</p>
+            <ul class="pts">
+              <li>答えで分かれる結末が3つ</li>
+              <li>数百人が同時に始めても詰まらない</li>
+              <li>本番前に試せる試験環境つき</li>
+            </ul>
+                        <div class="try">
+              <a class="btn" href="https://negilab.github.io/tools/demo/nazotoki/" target="_blank" rel="noopener" data-cta="try_nazotoki">体験版を開く<small>携帯向け・架空の題材</small></a>
+              <a class="more" href="case/nazotoki/index.html">くわしく →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══ 料金 ══ -->
+  <section id="price">
+    <div class="wrap narrow">
+      <h2 class="sec">料金</h2>
+      <div class="pcard">
+        <div class="yen">5<small>万円／月</small></div>
+        <p class="tax"><b>税込50,000円。1社につき。</b></p>
+        <ul>
+          <li>初期費用なし。最低契約期間なし。</li>
+          <li>減らす業務の数に上限はありません。1つ目を直したあと、2つ目、3つ目と直しても、月5万円のままです。</li>
+          <li>取りかかるのは1つずつ、順番に進めます。大きいものは、始める前にかかる日数をお伝えします。</li>
+          <li>手直しや追加は何度でも承ります。動かなくなったとご連絡いただければ、直すのもこの料金に含まれます。</li>
+          <li>エクセルやGoogle、そのパソコンの中で動くものは、これ以外にかかりません。</li>
+        </ul>
+      </div>
+      <h3 class="sub3">別にかかるもの（必要なときは、作る前にお伝えします）</h3>
+      <ul class="plain">
         <li>お客さまや一般の方など、社外の大勢が使うもの：24時間動き続けるように見守り、止まったら直す手間として月5万円。借りるコンピューターの料金（サーバ代）は別で、月数千円の実費です。</li>
         <li>独自ドメインなどの実費</li>
-        <li>アプリの一部にAIを組み込む場合：月5万円の追加。</li>
+        <li>アプリの一部にAIを組み込む場合：月5万円の追加。必要かどうかは、業務を拝見したうえで、作る前にお伝えします。</li>
       </ul>
-      <p class="note">必要かどうかは、業務を拝見したうえで、作る前にお伝えします。</p>
+      <p class="note">適格請求書発行事業者（インボイス）には未登録です。</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="who">
-  <div class="wrap">
-    <h2>誰がやるか</h2>
-    <div class="who-box">
-      <img src="https://negilab.tokyo/me.jpg" alt="neggy">
-      <p>コールセンターと医療の現場で12年、業務を減らす側の責任者を務めてきました。勤務先は、NTTドコモグループ、ベルシステム24、Ubie。<br>
-      13,000の医療機関を支える裏方の仕事を10人分から1人分にしたのも、<br>
-      コールセンターの通話を採点する仕事を年3,600時間から600時間にしたのも、<br>
-      業務の流れを見直し、道具を自分で作って実現したものです。</p>
+  <!-- ══ 誰がやるか ══ -->
+  <section class="band" id="profile">
+    <div class="wrap narrow">
+      <h2 class="sec">誰がやるか</h2>
+      <div class="me">
+        <div class="ph"><img src="https://negilab.tokyo/me.jpg" alt="neggy" width="600" height="600" loading="lazy"></div>
+        <div>
+          <div class="nm">neggy<small>ねぎラボ　東京都杉並区</small></div>
+          <p class="bio">コールセンターと医療の現場で12年、業務を減らす側の責任者を務めてきました。勤務先は、NTTドコモグループ、ベルシステム24、Ubie。13,000の医療機関を支える裏方の仕事を10人分から1人分にしたのも、コールセンターの通話を採点する仕事を年3,600時間から600時間にしたのも、業務の流れを見直し、道具を自分で作って実現したものです。</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="faq">
-  <div class="wrap">
-    <h2>よくある質問</h2>
-    <dl class="faq">
-      <dt>業種は決まっていますか。</dt>
-      <dd>特に決めていません。ただ、社内の決まりでGoogleやAIなどの外の道具が一切使えない会社さまでは、お手伝いできることが限られます。</dd>
-      <dt>Googleは使っていません。エクセルだけです。</dt>
-      <dd>そのパソコンの中だけで動くものもお作りできます。図面の道具がそうです。</dd>
-      <dt>何を用意すればいいですか。</dt>
-      <dd>いまお使いのエクセルやフォーム、出している書類を、そのままお見せください。上の事例は、既存のエクセル1枚、既存のフォームと書類2枚から作っています。</dd>
-      <dt>やめたら、作ったものは使えなくなりますか。</dt>
-      <dd>お使いいただけます。作ったものもデータも、あなたの手元に残ります。おやめになるときは、前の月のうちにお伝えください。翌月末で終了です。</dd>
-      <dt>打ち合わせはどうやりますか。</dt>
-      <dd>初回はビデオ通話です。関東でしたら、伺うこともできます。お返事は翌営業日までにお送りします。</dd>
-      <dt>営業の電話はきますか。</dt>
-      <dd>おかけしません。電話番号を持っていません。ご連絡はメールとこのフォームだけで承ります。</dd>
-      <dt>AIは使いますか。</dt>
-      <dd>AIに処理させるのが一番よい業務なら、そのようにご提案します。アプリの一部にAIを組み込む場合は月5万円の追加になるため、必要かどうかは業務を拝見して、始める前にお伝えします。</dd>
-      <dt>法人ですか、個人ですか。</dt>
-      <dd>個人事業です。請求書は発行できます。インボイスは未登録です。</dd>
-      <dt>イベント用の1回きりのものも頼めますか。</dt>
-      <dd>ご依頼いただけます。謎解きの事例も、運営の方がご自身で次の問題を作れる画面にしていて、すでに使い始めていただいています。料金は同じで、1社につき月5万円です。</dd>
-    </dl>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <h2>作業のご相談</h2>
-    <p>ご相談も試作も無料です。いまお困りの作業を、一言でお送りください。翌営業日までに info@negilab.tokyo からご返信します。営業のお電話はいたしません。</p>
-    <form onsubmit="return false;">
-      <div class="field">
-        <label for="f-name">お名前<span class="req">必須</span></label>
-        <input type="text" id="f-name" placeholder="呼び名でも構いません">
-        <p class="err" hidden>お名前をご入力ください。</p>
+  <!-- ══ よくある質問 ══ -->
+  <section id="faq">
+    <div class="wrap narrow">
+      <h2 class="sec">よくある質問</h2>
+      <div class="faq">
+        <details><summary>業種は決まっていますか。</summary><div class="a">特に決めていません。ただ、社内の決まりでGoogleやAIなどの外の道具が一切使えない会社さまでは、お手伝いできることが限られます。</div></details>
+        <details><summary>Googleは使っていません。エクセルだけです。</summary><div class="a">そのパソコンの中だけで動くものもお作りできます。図面の道具がそうです。</div></details>
+        <details><summary>何を用意すればいいですか。</summary><div class="a">いまお使いのエクセルやフォーム、出している書類を、そのままお見せください。上の事例は、既存のエクセル1枚、既存のフォームと書類2枚から作っています。</div></details>
+        <details><summary>やめたら、作ったものは使えなくなりますか。</summary><div class="a">お使いいただけます。作ったものもデータも、あなたの手元に残ります。おやめになるときは、前の月のうちにお伝えください。翌月末で終了です。</div></details>
+        <details><summary>打ち合わせはどうやりますか。</summary><div class="a">初回はビデオ通話です。関東でしたら、伺うこともできます。お返事は翌営業日までにお送りします。</div></details>
+        <details><summary>営業の電話はきますか。</summary><div class="a">おかけしません。電話番号を持っていません。ご連絡はメールとこのフォームだけで承ります。</div></details>
+        <details><summary>AIは使いますか。</summary><div class="a">AIに処理させるのが一番よい業務なら、そのようにご提案します。アプリの一部にAIを組み込む場合は月5万円の追加になるため、必要かどうかは業務を拝見して、始める前にお伝えします。上の事例のうち、出店受付・アルバイト管理・図面の道具は、AIを使っていません。</div></details>
+        <details><summary>法人ですか、個人ですか。</summary><div class="a">個人事業です。請求書は発行できます。インボイスは未登録です。</div></details>
+        <details><summary>イベント用の1回きりのものも頼めますか。</summary><div class="a">ご依頼いただけます。謎解きの事例も、運営の方がご自身で次の問題を作れる画面にしていて、すでに使い始めていただいています。料金は同じで、1社につき月5万円です。</div></details>
       </div>
-      <div class="field">
-        <label for="f-mail">メールアドレス<span class="req">必須</span></label>
-        <input type="email" id="f-mail">
-        <p class="err" hidden>メールアドレスをご入力ください。</p>
-      </div>
-      <div class="field">
-        <label for="f-co">会社名・屋号<span class="opt">任意</span></label>
-        <input type="text" id="f-co">
-      </div>
-      <div class="field">
-        <label for="f-work">お困りの作業<span class="req">必須</span></label>
-        <textarea id="f-work" placeholder="例：申し込みがフォームとメールの両方で届く／毎月、同じ表を手で作り直している／同じ内容を2つの場所に入力している"></textarea>
-      </div>
-      <div class="field checks">
-        <span class="lbl" style="font-weight:600">いまお使いのもの<span class="opt">任意・複数可</span></span><br>
-        <label><input type="checkbox"> エクセル</label>
-        <label><input type="checkbox"> Google</label>
-        <label><input type="checkbox"> 紙</label>
-        <label><input type="checkbox"> メール</label>
-        <label><input type="checkbox"> LINE</label>
-        <label><input type="checkbox"> その他</label>
-      </div>
-      <div class="field">
-        <label for="f-url">会社URL</label>
-        <input type="url" id="f-url">
-      </div>
-      <button type="button" class="btn btn-primary" disabled>送信する</button>
-      <p class="disabled-note">※確認用のため送信はできません</p>
-    </form>
-    <p class="note">送信できないときは、info@negilab.tokyo へ直接お送りください。</p>
-    <div class="form-alt">
-      <a class="btn btn-secondary" href="mailto:info@negilab.tokyo?subject=%E4%BD%9C%E6%A5%AD%E3%81%AE%E7%9B%B8%E8%AB%87">Gmailで送る</a>
-      <button type="button" class="btn btn-secondary" disabled>内容をコピーする</button>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ══ 作業の相談 ══ -->
+  <section class="band" id="contact">
+    <div class="wrap narrow">
+      <h2 class="sec">作業のご相談</h2>
+      <p class="lede">ご相談も試作も無料です。いまお困りの作業を、一言でお送りください。翌営業日までに info@negilab.tokyo からご返信します。営業のお電話はいたしません。</p>
+
+      <form class="main" id="f" novalidate onsubmit="return false;">
+        <div class="two">
+          <div class="field">
+            <label for="f-name">お名前<span class="opt">呼び名でも構いません</span><span class="req">必須</span></label>
+            <input type="text" id="f-name" name="name" autocomplete="name">
+            <p class="err" id="e-name">お名前をご入力ください。</p>
+          </div>
+          <div class="field">
+            <label for="f-contact">メールアドレス<span class="req" id="contact-req">必須</span></label>
+            <input type="email" id="f-contact" name="contact" autocomplete="email">
+            <p class="err" id="e-contact">メールアドレスをご入力ください。</p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-company">会社名・屋号<span class="opt">任意</span></label>
+          <input type="text" id="f-company" name="company" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-detail">お困りの作業<span class="req">必須</span></label>
+          <textarea id="f-detail" name="detail"></textarea>
+          <p class="hint">例：申し込みがフォームとメールの両方で届く／毎月、同じ表を手で作り直している／同じ内容を2つの場所に入力している</p>
+          <p class="err" id="e-detail">お困りの作業を、一言でご記入ください。</p>
+        </div>
+        <div class="field">
+          <fieldset>
+            <legend class="lg">いまお使いのもの<span class="opt">任意・複数可</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="t" value="エクセル"><span class="bx"></span>エクセル</label>
+              <label class="chip"><input type="checkbox" name="t" value="Googleのフォームやスプレッドシート"><span class="bx"></span>Googleのフォームやスプレッドシート</label>
+              <label class="chip"><input type="checkbox" name="t" value="紙"><span class="bx"></span>紙</label>
+              <label class="chip"><input type="checkbox" name="t" value="メール"><span class="bx"></span>メール</label>
+              <label class="chip"><input type="checkbox" name="t" value="LINE"><span class="bx"></span>LINE</label>
+              <label class="chip"><input type="checkbox" name="t" value="その他"><span class="bx"></span>その他</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="hp" aria-hidden="true"><label>会社URL<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <p class="before-send" id="before-send"></p>
+        <div class="send">
+          <button class="btn" type="button" id="f-send" disabled aria-disabled="true">送信する</button>
+          <p class="hint" style="text-align:center">※確認用のため送信はできません</p>
+          <div class="alt" id="alt">送信できないときは、<a href="mailto:info@negilab.tokyo?subject=%E4%BD%9C%E6%A5%AD%E3%81%AE%E7%9B%B8%E8%AB%87">info@negilab.tokyo</a> へ直接お送りください。 <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info%40negilab.tokyo&amp;su=%E4%BD%9C%E6%A5%AD%E3%81%AE%E7%9B%B8%E8%AB%87" id="f-gmail" target="_blank" rel="noopener">Gmailで送る</a> ／ <button class="copy" type="button" id="f-copy" disabled>内容をコピーする</button></div>
+        </div>
+        <div class="sent" id="f-sent" role="status"></div>
+      </form>
+    </div>
+  </section>
+
 </main>
 
-<footer class="site-footer">
+<footer>
   <div class="wrap">
     <div class="cols">
       <div>
-        <img src="https://negilab.tokyo/logo.png" alt="ねぎラボ" style="height:28px">
-        <p>ねぎラボ（neggy）／東京都杉並区／<a href="mailto:info@negilab.tokyo">info@negilab.tokyo</a><br>個人事業。適格請求書発行事業者（インボイス）未登録。</p>
+        <div class="logo"><img src="https://negilab.tokyo/logo.png" alt="ねぎラボ" width="480" height="183"></div>
+        <p>ねぎラボ（neggy）／東京都杉並区／info@negilab.tokyo<br>個人事業。適格請求書発行事業者（インボイス）未登録。</p>
       </div>
       <div>
         <h4>体験版一覧</h4>
         <ul>
-          <li><a href="https://negilab.github.io/tools/pdfmask/">図面から名前と印を消す道具（パソコン向け）</a></li>
-          <li><a href="https://negilab.github.io/tools/demo/shutten/">出店の受付（パソコン向け）</a></li>
-          <li><a href="https://negilab.github.io/tools/demo/baito/">アルバイトの出勤と支払い（携帯でも）</a></li>
-          <li><a href="https://negilab.github.io/tools/demo/nazotoki/">謎解き（携帯向け）</a></li>
-          <li><a href="https://negilab.github.io/tools/douga/">簡単な動画編集の道具（音声・文字起こし・画面録画をひとつに。ねぎラボが自分で使っているもの）</a></li>
+          <li><a href="https://negilab.github.io/tools/pdfmask/" target="_blank" rel="noopener">図面から名前と印を消す道具（パソコン向け）</a></li>
+          <li><a href="https://negilab.github.io/tools/demo/shutten/" target="_blank" rel="noopener">出店の受付（パソコン向け）</a></li>
+          <li><a href="https://negilab.github.io/tools/demo/baito/" target="_blank" rel="noopener">アルバイトの出勤と支払い（携帯でも）</a></li>
+          <li><a href="https://negilab.github.io/tools/demo/nazotoki/" target="_blank" rel="noopener">謎解き（携帯向け）</a></li>
+          <li><a href="https://negilab.github.io/tools/douga/" target="_blank" rel="noopener">簡単な動画編集の道具（音声・文字起こし・画面録画をひとつに。ねぎラボが自分で使っているもの）</a></li>
         </ul>
       </div>
       <div>
@@ -260,8 +764,44 @@
         </ul>
       </div>
     </div>
-    <p class="small">このフォームの内容は、ご返信のためだけに使います。サイトはGoogleアナリティクスで閲覧数を計測しています。© 2026 ねぎラボ</p>
+    <div class="copy"><span>このフォームの内容は、ご返信のためだけに使います。サイトはGoogleアナリティクスで閲覧数を計測しています。</span><span>© 2026 ねぎラボ</span></div>
   </div>
 </footer>
+
+<div class="bar" id="bar">
+  <a class="btn" href="#contact" data-cta="bar_form">作業の相談をする</a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Person", "@id": "#neggy", "name": "neggy", "jobTitle": "業務改善", "email": "info@negilab.tokyo" },
+    { "@type": "ProfessionalService", "name": "ねぎラボ", "description": "エクセルやメール、紙に散らばった事務を、あなたの会社のGoogleやパソコンの中で動くアプリにまとめます。試作は無料、1社につき月5万円。", "founder": { "@id": "#neggy" }, "email": "info@negilab.tokyo", "areaServed": "日本", "address": { "@type": "PostalAddress", "addressLocality": "杉並区", "addressRegion": "東京都", "addressCountry": "JP" }, "priceRange": "月額50,000円（税込）" },
+    { "@type": "FAQPage", "mainEntity": [
+      { "@type": "Question", "name": "業種は決まっていますか。", "acceptedAnswer": { "@type": "Answer", "text": "特に決めていません。ただ、社内の決まりでGoogleやAIなどの外の道具が一切使えない会社さまでは、お手伝いできることが限られます。" } },
+      { "@type": "Question", "name": "やめたら、作ったものは使えなくなりますか。", "acceptedAnswer": { "@type": "Answer", "text": "お使いいただけます。作ったものもデータも、あなたの手元に残ります。おやめになるときは、前の月のうちにお伝えください。翌月末で終了です。" } },
+      { "@type": "Question", "name": "法人ですか、個人ですか。", "acceptedAnswer": { "@type": "Answer", "text": "個人事業です。請求書は発行できます。インボイスは未登録です。" } },
+      { "@type": "Question", "name": "営業の電話はきますか。", "acceptedAnswer": { "@type": "Answer", "text": "おかけしません。電話番号を持っていません。ご連絡はメールとこのフォームだけで承ります。" } }
+    ] }
+  ]
+}
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  (function () {
+    var head = document.getElementById('head'), bar = document.getElementById('bar'), hero = document.querySelector('.hero'), contact = document.getElementById('contact');
+    function update() {
+      var y = window.scrollY || 0; if (head) head.classList.toggle('is-scrolled', y > 8);
+      if (!hero || !contact || !bar) return;
+      bar.classList.toggle('is-on', !(hero.getBoundingClientRect().bottom > 0) && !(contact.getBoundingClientRect().top < window.innerHeight));
+    }
+    window.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update); update();
+  })();
+})();
+</script>
 </body>
 </html>
